@@ -1,6 +1,6 @@
 WXLIBS = `wx-config --libs`
 WXFLAGS = `wx-config --cxxflags`
-INCLUDES = -I. -I./App
+INCLUDES = -I. -I./App -I./Frames
 LIBS =
 FLAGS = -g $(INCLUDES)
 CPP = g++
@@ -13,7 +13,7 @@ CPP = g++
 .cpp :
 	$(CPP) $(WXFLAGS) $(FLAGS) $< -o $@ $(WXLIBS) $(LIBS)
 
-SRC = main.cpp App/wxEditor.cpp
+SRC = main.cpp App/wxEditor.cpp Frames/MainFrame.cpp
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
 all: $(OBJ)

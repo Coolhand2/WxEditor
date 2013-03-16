@@ -7,9 +7,10 @@
 
 #include <wx/frame.h>
 #include "wxEditor.h"
+#include "MainFrame.h"
 
 bool wxEditor::OnInit(){
-    wxFrame *frame = new wxFrame((wxFrame*)NULL, -1, _T("wxEditor"));
+    wxFrame *frame = new MainFrame(_("wxEditor"), wxDefaultPosition, wxSize(800, 600));
     frame->Show(true);
     SetTopWindow(frame);
     return true;
