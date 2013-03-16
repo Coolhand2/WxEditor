@@ -16,8 +16,11 @@
 class MainFrame : public wxFrame {
 private:
     wxTextCtrl *_text;
-    wxMenuBar *_menu;
-    void _populateMenu();
+    wxString _documentPath;
+    void _loadMenus();
+    void _loadFrame();
+    void _setupFrame();
+    wxString _getFileTypes();
 public:
     MainFrame(const wxString &title, const wxPoint &position, const wxSize &size);
     void newFile(wxCommandEvent &event);
@@ -36,7 +39,8 @@ enum {
     M_Save,
     M_SaveAs,
     M_Close,
-    M_Quit
+    M_Quit,
+    E_Input
 };
 
 #endif	/* MAINFRAME_H */
