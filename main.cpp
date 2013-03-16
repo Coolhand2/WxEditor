@@ -7,7 +7,8 @@
 
 #include <iostream>
 
-#include <wx/wx.h>
+#include "App/wxEditor.h"
+#include <wx/app.h>
 
 using namespace std;
 
@@ -15,20 +16,5 @@ using namespace std;
  *
  */
 
-class wxEditor : public wxApp
-{
-public:
-    virtual bool OnInit();
-};
 
-DECLARE_APP(wxEditor);
 IMPLEMENT_APP(wxEditor);
-
-bool wxEditor::OnInit(){
-    wxFrame *frame = new wxFrame((wxFrame*)NULL, -1, _T("wxEditor"));
-    frame->CreateStatusBar();
-    frame->SetStatusText(_T("Hello, World!"));
-    frame->Show(true);
-    SetTopWindow(frame);
-    return true;
-}
