@@ -5,7 +5,7 @@
  * Created on March 16, 2013, 1:48 AM
  */
 
-#include "MainFrame.h"
+#include <MainFrame.h>
 #include <sstream>
 #include <iostream>
 #include <wx/filedlg.h>

@@ -1,6 +1,6 @@
 WXLIBS = `wx-config --libs`
 WXFLAGS = `wx-config --cxxflags`
-INCLUDES = -I. -I./App -I./Frames
+INCLUDES = -I. -I./includes
 LIBS = $(WXLIBS)
 ifeq ($(BUILD), release)
     FLAGS = -g -Wall -O3 -foptimize-sibling-calls $(INCLUDES) $(WXFLAGS)
@@ -16,7 +16,7 @@ QUIET_RM = @echo '    ' CLEAN;
 .cpp.o:
 	$(QUIET_CPP)$(CPP) $(FLAGS) -c $< -o $@
 
-SRC = main.cpp App/wxEditor.cpp Frames/MainFrame.cpp
+SRC = main.cpp src/wxEditor.cpp src/MainFrame.cpp
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
 all: wxEditor
